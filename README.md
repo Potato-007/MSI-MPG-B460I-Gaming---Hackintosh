@@ -22,7 +22,7 @@ total cost: 1.233 EUR / 1.490 USD
 ```
 CPU contains an iGPU: Intel UHD Graphics 630 1536 MB
 LAN: Realtek 8125B 2.5G
-WiFi / Bluetooth: Intel AX200
+WiFi / Bluetooth card: Intel AX200NGW
 Audio: Realtek® ALC1200
 max. memory frequency supported by mobo: 2933 MHz - makes no sense to buy a faster / more expensive RAM
 I/O Controller: NUVOTON NCT6687

@@ -86,6 +86,7 @@ more info on how to fix the pink screen [here](https://elitemacx86.com/threads/p
 - CFG Lock OFF
 - SW Guard OFF
 - Above 4G ON
+- C1E support ON
 
 
 ###  Benchmarks

@@ -101,10 +101,7 @@ NVMe R/W speed tops at 2.900 MB/s
 
 ###  Wi-Fi
 
-using itlwm.kext + HeliPort the wi-fi is working, however speeds could be much better
-itlwm.kext does not support AirDrop
-over 2.4GHz: 4MB/s down and 3MB/s up
-over 5GHz: 6MB/s down and 4MB/s up
+works thanks to AirportItlwm.kext
 
 ###  BlueTooth
 
@@ -114,5 +111,5 @@ works thanks to the IntelBluetoothInjector.kext and IntelBluetoothFirmware.kext
 
 - Handoff / Continuity, AirDrop
 - Unlock with Apple Watch - not tested
-- shutdown - it turns on after a few minutes
+- shutdown - it turns on after a few minutes, but overnight sleep is ok
   (Dortania instructions with FixShutdown-USB-SSDT applied, but not working)

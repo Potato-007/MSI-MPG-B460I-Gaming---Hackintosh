@@ -114,3 +114,5 @@ works thanks to the IntelBluetoothInjector.kext and IntelBluetoothFirmware.kext
 
 - Handoff / Continuity, AirDrop
 - Unlock with Apple Watch - not tested
+- shutdown - it turns on after a few minutes
+  (Dortania Shutdown/Restart applied, but not working)

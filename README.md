@@ -27,6 +27,8 @@ Audio: Realtek® ALC1200
 max. memory frequency supported by mobo: 2933 MHz - makes no sense to buy a faster / more expensive RAM
 I/O Controller: NUVOTON NCT6687
 ```
+RHUB ACPI path: PCI0.XHC.RHUB
+USB controller ACPI path: _SB.PCI0.XHC
 
 
 ###  comments

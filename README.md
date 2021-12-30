@@ -32,8 +32,6 @@ I/O Controller: NUVOTON NCT6687
 ```
 RHUB ACPI path: PCI0.XHC.RHUB
 USB controller ACPI path: _SB.PCI0.XHC
-
-SSDT-RHUB.aml is not needed as USB controller is already XHC, no need to rename XHC1 or XHCI to XHC
 ```
 
 ###  comments

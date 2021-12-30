@@ -1,6 +1,6 @@
 
 
-## MSI MPG B460I Gaming - hackintosh - OpenCore 0.71 - Catalina 10.15.7
+## MSI MPG B460I Gaming - hackintosh - OpenCore 0.76 - Catalina 10.15.7
 
 ###  configuration
 
@@ -111,5 +111,5 @@ works thanks to the IntelBluetoothInjector.kext and IntelBluetoothFirmware.kext
 
 - Handoff / Continuity, AirDrop
 - Unlock with Apple Watch - not tested
-- shutdown - it turns on after a few minutes, but overnight sleep is ok
+- shutdown - it turns on after a few minutes or hours, but overnight sleep is ok. As every computer draws the same amount of current in powered off as in sleep mode (about 3W average), I gave up on fixing shutdown, instead I'm using an overnight sleep.
   (Dortania instructions with FixShutdown-USB-SSDT applied, but not working)

@@ -1,6 +1,6 @@
 
 
-## MSI MPG B460I Gaming - hackintosh - OpenCore 0.76 - Catalina 10.15.7
+## MSI MPG B460I Gaming - hackintosh - OpenCore 0.95 - Ventura 13.6.1
 
 ###  configuration
 

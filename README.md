@@ -39,55 +39,20 @@ USB controller ACPI path: _SB.PCI0.XHC
 - the iGPU is driving a 34" monitor - 3440 x 1440 @ 60Hz over DispLayPort
 - monitor attached via HDMI has a pink coloration after login - see FIX below
 - the max refresh rate the mobo supports over HDMI is 30Hz by the specs, but still it outputs 60Hz with the fix below
-- Ethernet has to be adjusted to manual 1000baseT - this motherboard has a Realtek 8125B 2.5G LAN connection
+- Ethernet has to be adjusted to manual 1000baseT - this motherboard has a Realtek 8125B 2.5G LAN connection - Update: manual adjustment not needed since I updated to OC 0.95 and Ventura5 and replaced all the .kexts
 - audio works - so far the rear Stereo output has been tested
-- sleep works
+- sleep works, shutdown works
 - USB3 finally works
+- Handoff / Continuity, AirDrop works since I updated to OC 0.95 and Ventura
 - if you want to have boot chim, then plug your jack cable into the Red Line-out at the back and set 'AudioSupport' in config.plist to True (it's False now). If you prefer to use the front output of the motherboard - that corresponds to 'Headphones' in audio settings - then change the 'AudioOut' in config.plist to 3
-
-###  fixes
-
-video playback: VLC and other players were crashing with the default OpenCore 6.5 config
-
-add the following to DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0):
-
-
-| Key | Type | Value |
-| ------------- | ------------- | ------------- |
-| AAPL,ig-platform-id | Data | 00009B3E |
-| framebuffer-con1-enable | Data | 01000000 |
-| framebuffer-con1-alldata | Data | 01050900 00040000 87010000 |
-| framebuffer-patch-enable | Data | 01000000 |
-| framebuffer-stolenmem | Data | 00003001 |
-| device-id | Data | 9B3E0000 |
-| dpcd-max-link-rate | Data | 14000000 |
-| enable-dpcd-max-link-rate-fix | Data | 01000000 |
-| framebuffer-portcount | Data | 04000000 |
-| framebuffer-con2-enable | Data | 01000000 |
-| framebuffer-con2-alldata | Data | 02060900 00040000 87010000 |
-| framebuffer-con3-enable | Data | 01000000 |
-| framebuffer-con3-alldata | Data | 03040A00 00080000 87010000 |
-| enable-hdmi20 | Data | 01000000 |
-| enable-lspcon-support | Data | 01000000 |
-| framebuffer-con3-has-lspcon | Data | 01000000 |
-| framebuffer-con3-preferred-lspcon-mode | Data | 01000000 |
-
-maybe it's not all needed, but have not time to dig deeper...
-
-to fix the ping screen overe HDMI, also add one more entry:
-
-| Key | Type | Value |
-| ------------- | ------------- | ------------- |
-| framebuffer-con1-type | Data | 00080000 |
-
-more info on how to fix the pink screen [here](https://elitemacx86.com/threads/pink-screen-on-intel-hd-and-uhd-graphics-on-macos-sierra-and-later-on-desktops-clover-opencore.434/) if you have Intel HD Graphics 530 540 550 630 640 or 650
 
 
 ###  BIOS settings
 
 - Secure boot OFF
+- MSI Fast boot Off
 - Fast boot OFF
-- Intel VT-D ON (DisableIoMapper has to be True in Opencore config.plist)
+- Intel VT-D is ON (DisableIoMapper has to be True in Opencore config.plist)
 - CFG Lock OFF
 - SW Guard OFF
 - Above 4G ON
@@ -104,17 +69,18 @@ Geekbench 5 - 1.288 / 10.391
 
 NVMe R/W speed tops at 2.900 MB/s
 
-###  Wi-Fi
+###  Wi-Fi & BlueTooth
 
 works thanks to AirportItlwm.kext
-
+BlueToolFixup.kext
+IntelBluetoothFirmware.kext
+IntelBTPatcher.kext
+...since I updated to OC 0.95 and Ventura
 ###  BlueTooth
 
 works thanks to the IntelBluetoothInjector.kext and IntelBluetoothFirmware.kext
 
 ###  not working
 
-- Handoff / Continuity, AirDrop
 - Unlock with Apple Watch - not tested
-- shutdown - it turns on after a few minutes or hours, but overnight sleep is ok. As every computer draws the same amount of current in powered off as in sleep mode (about 3W average), I gave up on fixing shutdown, instead I'm using an overnight sleep.
-  (Dortania instructions with FixShutdown-USB-SSDT applied, but not working)
+

@@ -76,11 +76,17 @@ BlueToolFixup.kext
 IntelBluetoothFirmware.kext
 IntelBTPatcher.kext
 ...since I updated to OC 0.95 and Ventura
-###  BlueTooth
 
-works thanks to the IntelBluetoothInjector.kext and IntelBluetoothFirmware.kext
+###  Fixing Shutdown
 
-###  not working
+3 major steps was needed:
 
-- Unlock with Apple Watch - not tested
+- proper USB mapping with setting the onboard LED controller to 'internal' as suggested elsewhere
 
+- applying the shutdown fixes found here https://dortania.github.io/OpenCore-Post-Install/usb/misc/shutdown.html
+  in case of this mobo the USB contoller path in FixShutdown-USB-SSDT.aml needs to be changed from
+  '\_SB.PCI0.XHC.PMEE = Zero' to '\_SB.PCI0.XHC = Zero'
+
+- I also turned off ErP Ready in BIOS
+
+  without these my hackintosh would turn on by itself after a few seconds or randomly during the night

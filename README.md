@@ -71,15 +71,12 @@ NVMe R/W speed tops at 2.900 MB/s
 
 ###  Wi-Fi & BlueTooth
 
-works with Heliport + itlwm.kext
+works with:
+AirportItlwm.kext
 BlueToolFixup.kext
 IntelBluetoothFirmware.kext
-IntelBTPatcher.kext
 ...since I updated to OC 0.95 and Ventura
-however no handoff and continuity like this.
-
-with  AirportItlwm.kext (insed of Heliport + itlwm.kext)
-the wifi was unreliable and therefore continuity / handoff too
+however handoff  / continuity / universal keyboard does not work
 
 ###  Fixing Shutdown
 

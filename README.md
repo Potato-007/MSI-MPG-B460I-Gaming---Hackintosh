@@ -1,6 +1,6 @@
 
 
-## MSI MPG B460I Gaming - hackintosh - OpenCore 0.95 - Ventura 13.6.1
+## MSI MPG B460I Gaming - hackintosh - OpenCore 0.96 - Ventura 13.6.1
 
 ###  configuration
 
@@ -35,6 +35,9 @@ USB controller ACPI path: _SB.PCI0.XHC
 ```
 
 ###  comments
+>>> WARNING !!! since upgrading to Ventura I have crashes, file-system gets corruption
+>>> turns out Monterey and Ventura are only working with specific NVME M.2 controllers.
+>>> I'll have to replace it with WD branded. Read <a href = "https://www.tonymacx86.com/threads/choosing-a-compatible-nvme-ssd-for-your-macos-boot-drive.323479" > more</a
 
 - the iGPU is driving a 34" monitor - 3440 x 1440 @ 60Hz over DispLayPort
 - monitor attached via HDMI has a pink coloration after login - see FIX below
